@@ -62,8 +62,11 @@ export default class SystemRelatedColorScheme extends ColorSchemeBase {
     window
       .matchMedia('(prefers-color-scheme: dark)')
       .addEventListener('change', () => {
-        this.currentScheme = this.currentSystemScheme;
-        this.#removeCookieColorScheme();
+        if (this.currentScheme === this.currentSystemScheme) {
+          this.#removeCookieColorScheme();
+        } else {
+          this.setScheme(this.currentSystemScheme);
+        }
       });
 
     document.addEventListener('color-scheme-change', (event) => {
