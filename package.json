@@ -4,8 +4,8 @@
   "description": "A service script that gives the ability to configure and control color scheme behavior.",
   "main": "dist/color-scheme-manager.js",
   "scripts": {
-    "dev": "webpack serve --mode development",
-    "build": "webpack --mode production",
+    "dev": "export BUILD_MODE=development && webpack serve --mode development",
+    "build": "export BUILD_MODE=production && webpack --mode production",
     "lint": "eslint src/**/*.js",
     "format": "prettier --write 'src/**/*.js'"
   },
