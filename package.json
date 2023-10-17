@@ -1,5 +1,6 @@
 {
   "name": "@methodev/color-scheme-manager",
+  "title": "ColorSchemeManager",
   "version": "0.1.6",
   "description": "A service script that gives the ability to configure and control color scheme behavior.",
   "main": "dist/color-scheme-manager.js",
