@@ -7,8 +7,6 @@ let instance;
 export default class SystemRelatedColorScheme extends ColorSchemeBase {
   #_initialSystemColorScheme;
 
-  #_systemColorScheme;
-
   #_cookieColorScheme;
 
   constructor(config) {
@@ -21,7 +19,6 @@ export default class SystemRelatedColorScheme extends ColorSchemeBase {
     instance = this;
 
     this.initialSystemColorScheme = this.currentSystemScheme;
-    this.systemColorScheme = this.initialSystemColorScheme;
     this.cookieColorScheme = CookieService.get(COLOR_SCHEME_COOKIE_NAME);
   }
 
@@ -31,14 +28,6 @@ export default class SystemRelatedColorScheme extends ColorSchemeBase {
 
   set initialSystemColorScheme(value) {
     this.#_initialSystemColorScheme = value;
-  }
-
-  get systemColorScheme() {
-    return this.#_systemColorScheme;
-  }
-
-  set systemColorScheme(value) {
-    this.#_systemColorScheme = value;
   }
 
   get cookieColorScheme() {
@@ -73,7 +62,6 @@ export default class SystemRelatedColorScheme extends ColorSchemeBase {
     window
       .matchMedia('(prefers-color-scheme: dark)')
       .addEventListener('change', () => {
-        this.systemColorScheme = this.currentSystemScheme;
         this.current = this.currentSystemScheme;
         this.#removeCookieColorScheme();
       });
@@ -81,14 +69,14 @@ export default class SystemRelatedColorScheme extends ColorSchemeBase {
     document.addEventListener('color-scheme-change', (event) => {
       const { scheme } = event.detail;
 
-      if (scheme === this.systemColorScheme) {
+      if (scheme === this.currentSystemScheme) {
         this.#removeCookieColorScheme();
       } else {
         this.#addCookieColorScheme(scheme);
       }
     });
 
-    this.initialScheme = this.cookieColorScheme || this.systemColorScheme;
+    this.initialScheme = this.cookieColorScheme || this.currentSystemScheme;
 
     // Set initial scheme
     this.setScheme(this.initialScheme);
