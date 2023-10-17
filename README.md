@@ -68,11 +68,11 @@ const colorSchemeManager = ColorSchemeManager.init(config);
 
 ### Properties
 
-#### current
+#### currentScheme
 
 ```js
 // contains the value of the current color scheme
-colorSchemeManager.current
+colorSchemeManager.currentScheme
 ```
 
 #### initialScheme

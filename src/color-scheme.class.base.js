@@ -2,7 +2,7 @@ import CookieService from './color-scheme.service.cookie';
 import { COLOR_SCHEME_COOKIE_NAME } from './color-scheme.constants';
 
 export default class ColorSchemeBase {
-  #_current;
+  #_currentScheme;
 
   #_initialScheme;
 
@@ -12,12 +12,12 @@ export default class ColorSchemeBase {
     this.#_defaultScheme = defaultScheme;
   }
 
-  get current() {
-    return this.#_current;
+  get currentScheme() {
+    return this.#_currentScheme;
   }
 
-  set current(value) {
-    this.#_current = value;
+  set currentScheme(value) {
+    this.#_currentScheme = value;
   }
 
   get initialScheme() {
@@ -37,7 +37,7 @@ export default class ColorSchemeBase {
   }
 
   get oppositeScheme() {
-    return this.current === 'light' ? 'dark' : 'light';
+    return this.currentScheme === 'light' ? 'dark' : 'light';
   }
 
   mountCookieColorScheme(scheme) {
@@ -55,7 +55,7 @@ export default class ColorSchemeBase {
   }
 
   setScheme(scheme) {
-    this.current = scheme;
+    this.currentScheme = scheme;
 
     document.dispatchEvent(
       new CustomEvent('color-scheme-change', { detail: { scheme } })
