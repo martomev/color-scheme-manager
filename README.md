@@ -20,7 +20,9 @@ yarn add @methodev/color-scheme-manager
 
 ## Usage
 
-### Import
+To use the manager you need to go through the following three steps:
+
+### 1. Import
 
 First things first.
 Import the module as follows:
@@ -29,7 +31,7 @@ Import the module as follows:
 import ColorSchemeManager from '@methodev/color-scheme-manager';
 ```
 
-### Configure
+### 2. Configure
 
 The imported module only has an `init` method. It takes one argument and that is a config object which has two properties. Here they are:
 
@@ -40,7 +42,7 @@ const config = {
 };
 ```
 
-#### systemScheme
+#### systemSchemes
 
 A `Boolean` that determines whether the logic should be mixed up with the operating system color scheme or not.
 
@@ -52,7 +54,7 @@ A `String` that determines which color scheme among **light** & **dark** should 
 
 Default value: `light`
 
-### Initialize
+### 3. Initialize
 
 Now, that we have our `config`, let's get to initialize the module and keep the manager instance that will be returned.
 
@@ -73,6 +75,14 @@ const colorSchemeManager = ColorSchemeManager.init(config);
 colorSchemeManager.current
 ```
 
+#### initialScheme
+
+```js
+// contains the value of the initial color scheme of the site
+// at the time the manager was initialized
+colorSchemeManager.initialScheme
+```
+
 #### defaultScheme
 
 ```js
@@ -80,18 +90,38 @@ colorSchemeManager.current
 colorSchemeManager.defaultScheme
 ```
 
-#### initialScheme
-
-```js
-// contains the value of the initial color scheme which the site has entered in
-colorSchemeManager.initialScheme
-```
-
 #### oppositeScheme
 
 ```js
 // contains the value of the opposite color scheme to the current one
 colorSchemeManager.oppositeScheme
+```
+
+---
+
+> **_NOTE:_** There are few more properties when the `systemSchemes` is set to be `true`. Here they are:
+
+#### initialSystemColorScheme
+
+```js
+// contains the value of the initial system color scheme
+// at the time the manager was initialized
+colorSchemeManager.initialSystemColorScheme
+```
+
+#### currentSystemScheme
+
+```js
+// contains the value of the system color scheme
+// at the moment of accessing this property
+colorSchemeManager.currentSystemScheme
+```
+
+#### cookieColorScheme
+
+```js
+// contains the value of the manually set color scheme (if such)
+colorSchemeManager.cookieColorScheme
 ```
 
 ### Methods
