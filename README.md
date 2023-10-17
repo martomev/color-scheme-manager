@@ -33,7 +33,7 @@ import ColorSchemeManager from '@methodev/color-scheme-manager';
 
 ### 2. Configure
 
-The imported module only has an `init` method. It takes one argument and that is a config object which has two properties. Here they are:
+The imported module has only an `init` method. It takes one argument and that is a config object which has two properties. Here they are:
 
 ```js
 const config = {
@@ -56,7 +56,7 @@ Default value: `light`
 
 ### 3. Initialize
 
-Now, that we have our `config`, let's get to initialize the module and keep the manager instance that will be returned.
+Now that we have our `config`, let's initialize the module and store the manager instance that will be returned.
 
 ```js
 const colorSchemeManager = ColorSchemeManager.init(config);
@@ -136,7 +136,7 @@ colorSchemeManager.setScheme(scheme) // 'light' | 'dark'
 #### toggle()
 
 ```js
-// Toggles the color scheme
+// Toggles between light and dark color schemes
 colorSchemeManager.toggle()
 ```
 
