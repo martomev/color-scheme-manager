@@ -1,7 +1,9 @@
-src
-.vscode
+/.vscode
+/config
+/src
+/dist/demo.js
+/dist/index.html
 .babelrc
 .eslintrc.js
 .prettierrc.json
-index.js
-webpack.config.js
+init.js

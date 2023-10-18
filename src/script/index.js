@@ -1,5 +1,5 @@
-import NonSystemRelatedColorScheme from './src/color-scheme.class.non-system';
-import SystemRelatedColorScheme from './src/color-scheme.class.system';
+import NonSystemRelatedColorScheme from './color-scheme.class.non-system';
+import SystemRelatedColorScheme from './color-scheme.class.system';
 
 export default {
   init({ systemSchemes = true, defaultScheme = 'light' } = {}) {
