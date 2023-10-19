@@ -54,10 +54,8 @@ Default value: `true`
 
 A `String` that determines which color scheme among **light** & **dark** should be the default one when initialized for the first time.
 
-> —
 > **NOTE**
 > This setting is used only when the manager is not bound to the system color schemes. Otherwise, it won't be applicable to the logic as the initial color will be determined by the current system color scheme or by a color scheme that might have been set in a cookie already.
-> —
 
 Default value: `light`
 
@@ -69,10 +67,8 @@ Now that we have our `config`, let's initialize the module and store the manager
 const colorSchemeManager = ColorSchemeManager.init(config);
 ```
 
-> —
 > **NOTE**
 > You can only have one instance of the manager. If you initialize a second one, the first instance will be returned.
-> —
 
 ## Manager
 
@@ -109,10 +105,8 @@ colorSchemeManager.oppositeColorScheme
 
 ---
 
-> —
 > **NOTE**
 > There are few more properties when `systemSchemes` is set to be `true` that can be seen below.
-> —
 
 #### initialSystemScheme
 
@@ -186,15 +180,14 @@ document.addEventListener('color-scheme-change', (event) => {
 ## Behavior
 
 Here is an explanation to the behavior of the manager, based on all possible cases, divided into two groups:
-• when the manager is initialized;
-• when the manager reacts to a change.
+
+- when the manager is initialized;
+- when the manager reacts to a change.
 
 ### On initialization
 
-> —
 > **NOTE**
 > A color scheme that is already set in a cookie takes priority in all initialization cases, regardless the manager is bound to the system color schemes or not.
-> —
 
 #### With system color schemes
 
@@ -213,10 +206,8 @@ this.initialScheme =
 
 As mentioned, a color scheme set in a cookie takes priority. If no such, the `defaultScheme` value will be used.
 
-> —
 > **NOTE**
 > Once a cookie is set, the `defaultScheme` will never be used again.
-> —
 
 ### On change
 
@@ -224,10 +215,8 @@ As mentioned, a color scheme set in a cookie takes priority. If no such, the `de
 
 A change may occur by a shift in the system color scheme, or by a user action throughout some of the provided methods.
 
-> —
 > **NOTE**
 > Regardless of which type of change occurred, it takes precedence over the other if the other was leading at the time of the change.
-> —
 
 ##### Change of the system color scheme
 
