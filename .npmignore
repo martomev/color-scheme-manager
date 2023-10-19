@@ -6,4 +6,5 @@
 .babelrc
 .eslintrc.js
 .prettierrc.json
+.prettierignore
 init.js
