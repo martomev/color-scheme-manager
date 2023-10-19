@@ -1,7 +1,4 @@
 # ColorSchemeManager
-> @methodev/color-scheme-manager
-
----
 
 ## Description
 
