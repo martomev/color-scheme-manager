@@ -33,7 +33,7 @@ exports.serve = async (config) => {
       }
     },
     devMiddleware: {
-      writeToDisk: false
+      writeToDisk: true
     },
     compress: false,
     port: 8000
