@@ -8,6 +8,7 @@ module.exports = {
   extends: ['airbnb-base', 'plugin:prettier/recommended'],
   rules: {
     'comma-dangle': ['error', 'never'],
+    'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'no-constructor-return': 'off',
     'class-methods-use-this': 'off',
