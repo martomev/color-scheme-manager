@@ -5,9 +5,9 @@ import { COLOR_SCHEME_COOKIE_NAME } from './color-scheme.constants';
 let instance;
 
 export default class SystemRelatedColorScheme extends ColorSchemeBase {
-  #_initialSystemColorScheme;
+  #_initialSystemScheme;
 
-  #_cookieColorScheme;
+  #_cookieScheme;
 
   constructor(config) {
     super(config);
@@ -18,24 +18,24 @@ export default class SystemRelatedColorScheme extends ColorSchemeBase {
 
     instance = this;
 
-    this.initialSystemColorScheme = this.currentSystemScheme;
-    this.cookieColorScheme = CookieService.get(COLOR_SCHEME_COOKIE_NAME);
+    this.initialSystemScheme = this.currentSystemScheme;
+    this.cookieScheme = CookieService.get(COLOR_SCHEME_COOKIE_NAME);
   }
 
-  get initialSystemColorScheme() {
-    return this.#_initialSystemColorScheme;
+  get initialSystemScheme() {
+    return this.#_initialSystemScheme;
   }
 
-  set initialSystemColorScheme(value) {
-    this.#_initialSystemColorScheme = value;
+  set initialSystemScheme(value) {
+    this.#_initialSystemScheme = value;
   }
 
-  get cookieColorScheme() {
-    return this.#_cookieColorScheme;
+  get cookieScheme() {
+    return this.#_cookieScheme;
   }
 
-  set cookieColorScheme(value) {
-    this.#_cookieColorScheme = value;
+  set cookieScheme(value) {
+    this.#_cookieScheme = value;
   }
 
   get currentSystemScheme() {
@@ -45,14 +45,14 @@ export default class SystemRelatedColorScheme extends ColorSchemeBase {
   }
 
   #addCookieColorScheme(scheme) {
-    this.cookieColorScheme = scheme;
+    this.cookieScheme = scheme;
     this.mountCookieColorScheme(scheme);
 
     return this;
   }
 
   #removeCookieColorScheme() {
-    this.cookieColorScheme = null;
+    this.cookieScheme = null;
     this.unmountCookieColorScheme();
 
     return this;
@@ -79,7 +79,7 @@ export default class SystemRelatedColorScheme extends ColorSchemeBase {
       }
     });
 
-    this.initialScheme = this.cookieColorScheme || this.currentSystemScheme;
+    this.initialScheme = this.cookieScheme || this.currentSystemScheme;
 
     // Set initial scheme
     this.setScheme(this.initialScheme);
