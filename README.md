@@ -11,13 +11,13 @@ Install the module and its dependencies.
 With NPM:
 
 ```sh
-npm install @methodev/color-scheme-manager
+npm install @martomev/color-scheme-manager
 ```
 
 With Yarn:
 
 ```sh
-yarn add @methodev/color-scheme-manager
+yarn add @martomev/color-scheme-manager
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ First things first.
 Import the module as follows:
 
 ```js
-import ColorSchemeManager from '@methodev/color-scheme-manager';
+import ColorSchemeManager from '@martomev/color-scheme-manager';
 ```
 
 ### 2. Configure

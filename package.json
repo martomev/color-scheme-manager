@@ -1,5 +1,5 @@
 {
-  "name": "@methodev/color-scheme-manager",
+  "name": "@martomev/color-scheme-manager",
   "title": "ColorSchemeManager",
   "version": "0.1.9",
   "description": "A service script that gives the ability to configure and control color scheme behavior.",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/methodev/color-scheme-manager.git"
+    "url": "git+ssh://git@github.com/martomev/color-scheme-manager.git"
   },
   "keywords": [
     "color",
@@ -24,15 +24,15 @@
     "scheme"
   ],
   "author": {
-    "name": "Martin Metodiev",
+    "name": "Martin (Mev) Metodiev",
     "email": "martin@metodiev.dev",
-    "url": "https://metodiev.dev"
+    "url": "https://mev.bg"
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/methodev/color-scheme-manager/issues"
+    "url": "https://github.com/martomev/color-scheme-manager/issues"
   },
-  "homepage": "https://github.com/methodev/color-scheme-manager#readme",
+  "homepage": "https://github.com/martomev/color-scheme-manager#readme",
   "devDependencies": {
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
